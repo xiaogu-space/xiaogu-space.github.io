@@ -102,8 +102,5 @@ theme: fluid
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repo: https://github.com/yaorongke/yaorongke.github.io.git
-  branch: main
-  token: ghp_3KakcaPHerunNRyMerofcFd9pblU282FSbsY
+  type: ''
 
