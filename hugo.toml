@@ -1,4 +1,0 @@
-baseURL = 'https://xiaogu-space.github.io'
-languageCode = 'zh-cn'
-title = '小谷空间'
-theme = 'hugo-theme-stack'
