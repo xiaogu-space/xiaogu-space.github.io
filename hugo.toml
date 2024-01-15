@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://xiaogu-space.github.io'
 languageCode = 'en-us'
 title = '小谷 Hugo Site'
 theme = 'PaperMod'
