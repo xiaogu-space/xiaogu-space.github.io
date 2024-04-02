@@ -1,8 +1,8 @@
 baseURL: "https://xiaogu-space.github.io"
 languageCode: "zh-cn"
-title: "小谷空间"
+title: "小谷时刻"
 theme: "hugo-theme-stack"
 
 params:
   sidebar:
-    subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    subtitle: 明月清风自在怀,任重道远常心态。坎坷人生从容走,否极自有安泰来。
