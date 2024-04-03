@@ -1,5 +1,5 @@
 +++
-title = 'Mac vscode快捷键'
+title = 'Mac VsCode快捷键'
 date = 2024-04-02T15:04:05+08:00
 draft = false
 +++
