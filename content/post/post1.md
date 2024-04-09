@@ -1,7 +1,7 @@
 +++
 title = 'Mac上安装 PostgreSQL+PostGIS '
 date = 2024-04-09T08:43:57+08:00
-draft = true
+draft = false
 +++
 
 ## PostgreSQL安装

@@ -8,10 +8,10 @@
         <language>zh-cn</language>
         <lastBuildDate>Tue, 09 Apr 2024 08:43:57 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Mac上安装 PostgreSQL&#43;PostGIS </title>
-        <link>http://localhost:1313/post/post1/post1/</link>
+        <link>http://localhost:1313/post/post1/</link>
         <pubDate>Tue, 09 Apr 2024 08:43:57 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/post1/post1/</guid>
+        <guid>http://localhost:1313/post/post1/</guid>
         <description>&lt;h2 id=&#34;postgresql安装&#34;&gt;PostgreSQL安装&lt;/h2&gt;
 &lt;p&gt;1.查看可用版本，并安装&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew search postgresql
@@ -39,10 +39,10 @@ ALTER USER postgres WITH SUPERUSER;
         </item>
         <item>
         <title>Mac VsCode快捷键</title>
-        <link>http://localhost:1313/post/post0/post0/</link>
+        <link>http://localhost:1313/post/post0/</link>
         <pubDate>Tue, 02 Apr 2024 15:04:05 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/post0/post0/</guid>
+        <guid>http://localhost:1313/post/post0/</guid>
         <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/1712050172566827.png&#34;
 	
 	
