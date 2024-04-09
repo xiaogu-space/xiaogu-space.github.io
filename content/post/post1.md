@@ -1,8 +1,9 @@
-+++
-title = 'Mac上安装 PostgreSQL+PostGIS '
-date = 2024-04-09T08:43:57+08:00
-draft = false
-+++
+---
+title: 'Mac上安装 PostgreSQL+PostGIS '
+date: 2024-04-09T08:43:57+08:00
+draft: false
+image: /images/5460228_3092.jpg
+---
 
 ## PostgreSQL安装
 

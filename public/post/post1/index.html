@@ -24,7 +24,7 @@ CREATE EXTENSION postgis 3.再遇到PostGIS版本升级时需要执行
 SELECT postgis_extensions_upgrade(); '>
 <meta property='og:url' content='http://localhost:1313/post/post1/'>
 <meta property='og:site_name' content='小谷时刻'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-04-09T08:43:57&#43;08:00'/><meta property='article:modified_time' content='2024-04-09T08:43:57&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-04-09T08:43:57&#43;08:00'/><meta property='article:modified_time' content='2024-04-09T08:43:57&#43;08:00'/><meta property='og:image' content='http://localhost:1313/images/5460228_3092.jpg' />
 <meta name="twitter:title" content="Mac上安装 PostgreSQL&#43;PostGIS ">
 <meta name="twitter:description" content="PostgreSQL安装 1.查看可用版本，并安装
 brew search postgresql brew install postgresql 2.启动/停止
@@ -33,7 +33,8 @@ pg_ctl -V psql -V 4.创建一个root 用户
 psql postgres CREATE ROLE postgres WITH LOGIN PASSWORD &amp;#39;123456&amp;#39;; ALTER ROLE postgres CREATEDB; ALTER USER postgres WITH SUPERUSER; PostGIS安装 1.安装PostGIS
 brew install postgis 2.pg中安装postgis拓展
 CREATE EXTENSION postgis 3.再遇到PostGIS版本升级时需要执行
-SELECT postgis_extensions_upgrade(); ">
+SELECT postgis_extensions_upgrade(); "><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/images/5460228_3092.jpg' />
     </head>
     <body class="
     article-page
@@ -144,8 +145,16 @@ SELECT postgis_extensions_upgrade(); ">
     
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/post/post1/">
+                
+                    <img src="/images/5460228_3092.jpg" loading="lazy" alt="Featured image of post Mac上安装 PostgreSQL&#43;PostGIS " />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
