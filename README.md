@@ -7,7 +7,7 @@ hugo new post/post0.md
 ```
 hugo server
 ```
-你的网站已经在http://localhost:1313/开启了。
+你的网站已经在 http://localhost:1313 开启了。
 
 ## 2.网站访问地址
 https://xiaogu-space.github.io
