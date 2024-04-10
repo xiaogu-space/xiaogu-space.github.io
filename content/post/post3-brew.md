@@ -1,7 +1,8 @@
 ---
 title: 'Mac brew 常用命令'
-date: 2024-04-10T10:20:41+08:00
+date: 2024-04-03T10:20:41+08:00
 draft: false
+image: /images/homebrew.png
 ---
 * 查看brew的帮助
 

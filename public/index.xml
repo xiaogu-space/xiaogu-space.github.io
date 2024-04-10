@@ -6,13 +6,58 @@
         <description>Recent content on 小谷时刻</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 10 Apr 2024 10:20:41 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 10 Apr 2024 10:13:32 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Mac安装GeoServer</title>
+        <link>http://localhost:1313/post/post2-geoserver/</link>
+        <pubDate>Wed, 10 Apr 2024 10:13:32 +0800</pubDate>
+        
+        <guid>http://localhost:1313/post/post2-geoserver/</guid>
+        <description>&lt;img src="http://localhost:1313/images/geoserver.png" alt="Featured image of post Mac安装GeoServer" /&gt;&lt;p&gt;1.搜索是否可用安装包&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew search geoserver
+==&amp;gt; Formulae
+geoserver                                         geckodriver
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.安装 geoserver&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew install geoserver
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>Mac上安装 PostgreSQL&#43;PostGIS </title>
+        <link>http://localhost:1313/post/post1-pg/</link>
+        <pubDate>Tue, 09 Apr 2024 08:43:57 +0800</pubDate>
+        
+        <guid>http://localhost:1313/post/post1-pg/</guid>
+        <description>&lt;img src="http://localhost:1313/images/5460228_3092.jpg" alt="Featured image of post Mac上安装 PostgreSQL&#43;PostGIS " /&gt;&lt;h2 id=&#34;postgresql安装&#34;&gt;PostgreSQL安装&lt;/h2&gt;
+&lt;p&gt;1.查看可用版本，并安装&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew search postgresql
+brew install postgresql
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.启动/停止&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew services start postgresql
+brew services stop postgresql
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.查看安装版本&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pg_ctl -V
+psql -V
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4.创建一个root 用户&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;psql postgres
+
+CREATE ROLE postgres WITH LOGIN PASSWORD &amp;#39;123456&amp;#39;;
+ALTER ROLE postgres CREATEDB;
+ALTER USER postgres WITH SUPERUSER;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;postgis安装&#34;&gt;PostGIS安装&lt;/h2&gt;
+&lt;p&gt;1.安装PostGIS&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew install postgis
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.pg中安装postgis拓展&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;CREATE EXTENSION postgis
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.再遇到PostGIS版本升级时需要执行&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT postgis_extensions_upgrade();
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
         <title>Mac brew 常用命令</title>
         <link>http://localhost:1313/post/post3-brew/</link>
-        <pubDate>Wed, 10 Apr 2024 10:20:41 +0800</pubDate>
+        <pubDate>Wed, 03 Apr 2024 10:20:41 +0800</pubDate>
         
         <guid>http://localhost:1313/post/post3-brew/</guid>
-        <description>&lt;ul&gt;
+        <description>&lt;img src="http://localhost:1313/images/homebrew.png" alt="Featured image of post Mac brew 常用命令" /&gt;&lt;ul&gt;
 &lt;li&gt;查看brew的帮助&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew –help
@@ -70,51 +115,6 @@ brew cleanup
 &lt;li&gt;查看那些已安装的程序需要更新&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew outdated
-&lt;/code&gt;&lt;/pre&gt;</description>
-        </item>
-        <item>
-        <title>Mac安装GeoServer</title>
-        <link>http://localhost:1313/post/post2-geoserver/</link>
-        <pubDate>Wed, 10 Apr 2024 10:13:32 +0800</pubDate>
-        
-        <guid>http://localhost:1313/post/post2-geoserver/</guid>
-        <description>&lt;p&gt;1.搜索是否可用安装包&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew search geoserver
-==&amp;gt; Formulae
-geoserver                                         geckodriver
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.安装 geoserver&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew install geoserver
-&lt;/code&gt;&lt;/pre&gt;</description>
-        </item>
-        <item>
-        <title>Mac上安装 PostgreSQL&#43;PostGIS </title>
-        <link>http://localhost:1313/post/post1-pg/</link>
-        <pubDate>Tue, 09 Apr 2024 08:43:57 +0800</pubDate>
-        
-        <guid>http://localhost:1313/post/post1-pg/</guid>
-        <description>&lt;img src="http://localhost:1313/images/5460228_3092.jpg" alt="Featured image of post Mac上安装 PostgreSQL&#43;PostGIS " /&gt;&lt;h2 id=&#34;postgresql安装&#34;&gt;PostgreSQL安装&lt;/h2&gt;
-&lt;p&gt;1.查看可用版本，并安装&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew search postgresql
-brew install postgresql
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.启动/停止&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew services start postgresql
-brew services stop postgresql
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.查看安装版本&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pg_ctl -V
-psql -V
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4.创建一个root 用户&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;psql postgres
-
-CREATE ROLE postgres WITH LOGIN PASSWORD &amp;#39;123456&amp;#39;;
-ALTER ROLE postgres CREATEDB;
-ALTER USER postgres WITH SUPERUSER;
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;postgis安装&#34;&gt;PostGIS安装&lt;/h2&gt;
-&lt;p&gt;1.安装PostGIS&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew install postgis
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.pg中安装postgis拓展&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;CREATE EXTENSION postgis
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.再遇到PostGIS版本升级时需要执行&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT postgis_extensions_upgrade();
 &lt;/code&gt;&lt;/pre&gt;</description>
         </item>
         <item>
