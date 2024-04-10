@@ -1,22 +1,23 @@
 ---
-title: 'Mac安装GeoServer'
+title: 'GeoServer发布Shapefile矢量数据'
 date: 2024-04-10T10:13:32+08:00
 draft: false
 image: /images/geoserver.png
 ---
+## 1.Mac GeoServer 安装
 
-**1.搜索是否可用安装包**
+**1.1 搜索是否可用安装包**
 ```
 brew search geoserver
 
 ==> Formulae
 geoserver                                         geckodriver
 ```
-**2.安装 geoserver**
+**1.2 安装 geoserver**
 ```
 brew install geoserver
 ```
-**3.成功之后查看信息,显示安装的是2.25.0版本**
+**1.3 成功之后查看信息,显示安装的是2.25.0版本**
 ```
 brew info geoserver
 
@@ -35,7 +36,7 @@ install: 39 (30 days), 106 (90 days), 360 (365 days)
 install-on-request: 39 (30 days), 106 (90 days), 360 (365 days)
 build-error: 0 (30 days)
 ```
-**4.启动geoserver**
+**1.4 启动geoserver**
 ```
 geoserver path/to/data/dir
 ```
@@ -46,3 +47,5 @@ geoserver path/to/data/dir
 http://localhost:8080/geoserver/web
 
 ![](/images/geoserver-web.png)
+
+## 2.发布shp矢量数据
