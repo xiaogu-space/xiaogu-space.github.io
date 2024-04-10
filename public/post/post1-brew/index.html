@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='1.搜索是否可用安装包
-brew search geoserver ==&amp;gt; Formulae geoserver geckodriver 2.安装 geoserver
-brew install geoserver 3.成功之后查看信息,显示安装的是2.25.0版本
-brew info geoserver ==&amp;gt; geoserver: stable 2.25.0 (bottled) Java server to share and edit geospatial data https://geoserver.org/ /opt/homebrew/Cellar/geoserver/2.25.0 (885 files, 125.0MB) * Poured from bottle using the formulae.brew.sh API on 2024-04-10 at 10:15:55 From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/g/geoserver.rb License: GPL-2.0-or-later ==&amp;gt; Caveats To start geoserver: geoserver path/to/data/dir ==&amp;gt; Analytics install: 39 (30 days), 106 (90 days), 360 (365 days) install-on-request: 39 (30 days), 106 (90 days), 360 (365 days) build-error: 0 (30 days) 4.'>
-<title>Mac安装GeoServer</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=' 查看brew的帮助 brew –help 安装软件 brew install git 卸载软件 brew uninstall git 搜索软件 brew search git 显示已经安装软件列表 brew list 更新软件，把所有的Formula目录更新，并且会对本机已经安装并有更新的软件用*标明。 brew update 更新某具体软件 brew upgrade git 显示软件内容信息 brew info git 用浏览器打开 brew home 显示包依赖 brew deps 显示包的依赖树 brew deps --installed --tree 启动web服务器，可以通过浏览器访问http://localhost:4567/ 来同网页来管理包 brew server 删除程序，和upgrade一样，单个软件删除和所有程序老版删除。 brew cleanup git brew cleanup 查看那些已安装的程序需要更新 brew outdated '>
+<title>Mac brew 常用命令</title>
 
-<link rel='canonical' href='http://localhost:1313/post/post2-geoserver/'>
+<link rel='canonical' href='http://localhost:1313/post/post1-brew/'>
 
-<link rel="stylesheet" href="/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='Mac安装GeoServer'>
-<meta property='og:description' content='1.搜索是否可用安装包
-brew search geoserver ==&amp;gt; Formulae geoserver geckodriver 2.安装 geoserver
-brew install geoserver 3.成功之后查看信息,显示安装的是2.25.0版本
-brew info geoserver ==&amp;gt; geoserver: stable 2.25.0 (bottled) Java server to share and edit geospatial data https://geoserver.org/ /opt/homebrew/Cellar/geoserver/2.25.0 (885 files, 125.0MB) * Poured from bottle using the formulae.brew.sh API on 2024-04-10 at 10:15:55 From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/g/geoserver.rb License: GPL-2.0-or-later ==&amp;gt; Caveats To start geoserver: geoserver path/to/data/dir ==&amp;gt; Analytics install: 39 (30 days), 106 (90 days), 360 (365 days) install-on-request: 39 (30 days), 106 (90 days), 360 (365 days) build-error: 0 (30 days) 4.'>
-<meta property='og:url' content='http://localhost:1313/post/post2-geoserver/'>
+<link rel="stylesheet" href="/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='Mac brew 常用命令'>
+<meta property='og:description' content=' 查看brew的帮助 brew –help 安装软件 brew install git 卸载软件 brew uninstall git 搜索软件 brew search git 显示已经安装软件列表 brew list 更新软件，把所有的Formula目录更新，并且会对本机已经安装并有更新的软件用*标明。 brew update 更新某具体软件 brew upgrade git 显示软件内容信息 brew info git 用浏览器打开 brew home 显示包依赖 brew deps 显示包的依赖树 brew deps --installed --tree 启动web服务器，可以通过浏览器访问http://localhost:4567/ 来同网页来管理包 brew server 删除程序，和upgrade一样，单个软件删除和所有程序老版删除。 brew cleanup git brew cleanup 查看那些已安装的程序需要更新 brew outdated '>
+<meta property='og:url' content='http://localhost:1313/post/post1-brew/'>
 <meta property='og:site_name' content='小谷时刻'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-04-10T10:13:32&#43;08:00'/><meta property='article:modified_time' content='2024-04-10T10:13:32&#43;08:00'/><meta property='og:image' content='http://localhost:1313/images/geoserver.png' />
-<meta name="twitter:title" content="Mac安装GeoServer">
-<meta name="twitter:description" content="1.搜索是否可用安装包
-brew search geoserver ==&amp;gt; Formulae geoserver geckodriver 2.安装 geoserver
-brew install geoserver 3.成功之后查看信息,显示安装的是2.25.0版本
-brew info geoserver ==&amp;gt; geoserver: stable 2.25.0 (bottled) Java server to share and edit geospatial data https://geoserver.org/ /opt/homebrew/Cellar/geoserver/2.25.0 (885 files, 125.0MB) * Poured from bottle using the formulae.brew.sh API on 2024-04-10 at 10:15:55 From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/g/geoserver.rb License: GPL-2.0-or-later ==&amp;gt; Caveats To start geoserver: geoserver path/to/data/dir ==&amp;gt; Analytics install: 39 (30 days), 106 (90 days), 360 (365 days) install-on-request: 39 (30 days), 106 (90 days), 360 (365 days) build-error: 0 (30 days) 4."><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/images/geoserver.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-04-03T10:20:41&#43;08:00'/><meta property='article:modified_time' content='2024-04-03T10:20:41&#43;08:00'/><meta property='og:image' content='http://localhost:1313/images/homebrew.png' />
+<meta name="twitter:title" content="Mac brew 常用命令">
+<meta name="twitter:description" content=" 查看brew的帮助 brew –help 安装软件 brew install git 卸载软件 brew uninstall git 搜索软件 brew search git 显示已经安装软件列表 brew list 更新软件，把所有的Formula目录更新，并且会对本机已经安装并有更新的软件用*标明。 brew update 更新某具体软件 brew upgrade git 显示软件内容信息 brew info git 用浏览器打开 brew home 显示包依赖 brew deps 显示包的依赖树 brew deps --installed --tree 启动web服务器，可以通过浏览器访问http://localhost:4567/ 来同网页来管理包 brew server 删除程序，和upgrade一样，单个软件删除和所有程序老版删除。 brew cleanup git brew cleanup 查看那些已安装的程序需要更新 brew outdated "><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/images/homebrew.png' />
     </head>
     <body class="
     article-page
@@ -136,9 +127,9 @@ brew info geoserver ==&amp;gt; geoserver: stable 2.25.0 (bottled) Java server to
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/post/post2-geoserver/">
+            <a href="/post/post1-brew/">
                 
-                    <img src="/images/geoserver.png" loading="lazy" alt="Featured image of post Mac安装GeoServer" />
+                    <img src="/images/homebrew.png" loading="lazy" alt="Featured image of post Mac brew 常用命令" />
                 
             </a>
         </div>
@@ -149,7 +140,7 @@ brew info geoserver ==&amp;gt; geoserver: stable 2.25.0 (bottled) Java server to
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/post/post2-geoserver/">Mac安装GeoServer</a>
+            <a href="/post/post1-brew/">Mac brew 常用命令</a>
         </h2>
     
         
@@ -171,7 +162,7 @@ brew info geoserver ==&amp;gt; geoserver: stable 2.25.0 (bottled) Java server to
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Apr 10, 2024</time>
+                <time class="article-time--published">Apr 03, 2024</time>
             </div>
         
 
@@ -201,43 +192,65 @@ brew info geoserver ==&amp;gt; geoserver: stable 2.25.0 (bottled) Java server to
     <section class="article-content">
     
     
-    <p><strong>1.搜索是否可用安装包</strong></p>
-<pre tabindex="0"><code>brew search geoserver
-
-==&gt; Formulae
-geoserver                                         geckodriver
-</code></pre><p><strong>2.安装 geoserver</strong></p>
-<pre tabindex="0"><code>brew install geoserver
-</code></pre><p><strong>3.成功之后查看信息,显示安装的是2.25.0版本</strong></p>
-<pre tabindex="0"><code>brew info geoserver
-
-==&gt; geoserver: stable 2.25.0 (bottled)
-Java server to share and edit geospatial data
-https://geoserver.org/
-/opt/homebrew/Cellar/geoserver/2.25.0 (885 files, 125.0MB) *
-  Poured from bottle using the formulae.brew.sh API on 2024-04-10 at 10:15:55
-From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/g/geoserver.rb
-License: GPL-2.0-or-later
-==&gt; Caveats
-To start geoserver:
-  geoserver path/to/data/dir
-==&gt; Analytics
-install: 39 (30 days), 106 (90 days), 360 (365 days)
-install-on-request: 39 (30 days), 106 (90 days), 360 (365 days)
-build-error: 0 (30 days)
-</code></pre><p><strong>4.启动geoserver</strong></p>
-<pre tabindex="0"><code>geoserver path/to/data/dir
-</code></pre><p><strong>5.浏览器访问</strong></p>
-<p>http://localhost:8080/geoserver/web/</p>
-<p><img src="/images/geoserver-web.png"
-	
-	
-	
-	loading="lazy"
-	
-	
-></p>
-
+    <ul>
+<li>查看brew的帮助</li>
+</ul>
+<pre tabindex="0"><code>brew –help
+</code></pre><ul>
+<li>安装软件</li>
+</ul>
+<pre tabindex="0"><code>brew install git
+</code></pre><ul>
+<li>卸载软件</li>
+</ul>
+<pre tabindex="0"><code>brew uninstall git
+</code></pre><ul>
+<li>搜索软件</li>
+</ul>
+<pre tabindex="0"><code>brew search git
+</code></pre><ul>
+<li>显示已经安装软件列表</li>
+</ul>
+<pre tabindex="0"><code>brew list
+</code></pre><ul>
+<li>更新软件，把所有的Formula目录更新，并且会对本机已经安装并有更新的软件用*标明。</li>
+</ul>
+<pre tabindex="0"><code>brew update
+</code></pre><ul>
+<li>更新某具体软件</li>
+</ul>
+<pre tabindex="0"><code>brew upgrade git
+</code></pre><ul>
+<li>显示软件内容信息</li>
+</ul>
+<pre tabindex="0"><code>brew info git
+</code></pre><ul>
+<li>用浏览器打开</li>
+</ul>
+<pre tabindex="0"><code>brew home
+</code></pre><ul>
+<li>显示包依赖</li>
+</ul>
+<pre tabindex="0"><code>brew deps
+</code></pre><ul>
+<li>显示包的依赖树</li>
+</ul>
+<pre tabindex="0"><code>brew deps --installed --tree
+</code></pre><ul>
+<li>启动web服务器，可以通过浏览器访问<a class="link" href="http://localhost:4567/"  target="_blank" rel="noopener"
+    >http://localhost:4567/</a> 来同网页来管理包</li>
+</ul>
+<pre tabindex="0"><code>brew server
+</code></pre><ul>
+<li>删除程序，和upgrade一样，单个软件删除和所有程序老版删除。</li>
+</ul>
+<pre tabindex="0"><code>brew cleanup git
+brew cleanup
+</code></pre><ul>
+<li>查看那些已安装的程序需要更新</li>
+</ul>
+<pre tabindex="0"><code>brew outdated
+</code></pre>
 </section>
 
 
