@@ -6,12 +6,92 @@
         <description>Recent content on 小谷时刻</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Tue, 09 Apr 2024 08:43:57 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 10 Apr 2024 10:20:41 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Mac brew 常用命令</title>
+        <link>http://localhost:1313/post/post3-brew/</link>
+        <pubDate>Wed, 10 Apr 2024 10:20:41 +0800</pubDate>
+        
+        <guid>http://localhost:1313/post/post3-brew/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;查看brew的帮助&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew –help
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;安装软件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew install git
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;卸载软件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew uninstall git
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;搜索软件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew search git
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;显示已经安装软件列表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew list
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;更新软件，把所有的Formula目录更新，并且会对本机已经安装并有更新的软件用*标明。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew update
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;更新某具体软件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew upgrade git
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;显示软件内容信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew info git
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;用浏览器打开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew home
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;显示包依赖&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew deps
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;显示包的依赖树&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew deps --installed --tree
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;启动web服务器，可以通过浏览器访问&lt;a class=&#34;link&#34; href=&#34;http://localhost:4567/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://localhost:4567/&lt;/a&gt; 来同网页来管理包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew server
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;删除程序，和upgrade一样，单个软件删除和所有程序老版删除。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew cleanup git
+brew cleanup
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;查看那些已安装的程序需要更新&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew outdated
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
+        <title>Mac安装GeoServer</title>
+        <link>http://localhost:1313/post/post2-geoserver/</link>
+        <pubDate>Wed, 10 Apr 2024 10:13:32 +0800</pubDate>
+        
+        <guid>http://localhost:1313/post/post2-geoserver/</guid>
+        <description>&lt;p&gt;1.搜索是否可用安装包&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew search geoserver
+==&amp;gt; Formulae
+geoserver                                         geckodriver
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.安装 geoserver&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew install geoserver
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
         <title>Mac上安装 PostgreSQL&#43;PostGIS </title>
-        <link>http://localhost:1313/post/post1/</link>
+        <link>http://localhost:1313/post/post1-pg/</link>
         <pubDate>Tue, 09 Apr 2024 08:43:57 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/post1/</guid>
+        <guid>http://localhost:1313/post/post1-pg/</guid>
         <description>&lt;img src="http://localhost:1313/images/5460228_3092.jpg" alt="Featured image of post Mac上安装 PostgreSQL&#43;PostGIS " /&gt;&lt;h2 id=&#34;postgresql安装&#34;&gt;PostgreSQL安装&lt;/h2&gt;
 &lt;p&gt;1.查看可用版本，并安装&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew search postgresql
@@ -39,10 +119,10 @@ ALTER USER postgres WITH SUPERUSER;
         </item>
         <item>
         <title>Mac VsCode快捷键</title>
-        <link>http://localhost:1313/post/post0/</link>
+        <link>http://localhost:1313/post/post0-vscode/</link>
         <pubDate>Tue, 02 Apr 2024 15:04:05 +0800</pubDate>
         
-        <guid>http://localhost:1313/post/post0/</guid>
+        <guid>http://localhost:1313/post/post0-vscode/</guid>
         <description>&lt;img src="http://localhost:1313/images/1712050172566827.png" alt="Featured image of post Mac VsCode快捷键" /&gt;&lt;h2 id=&#34;全局&#34;&gt;全局&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Command + Shift + P / F1 显示命令面板
 Command + P 快速打开

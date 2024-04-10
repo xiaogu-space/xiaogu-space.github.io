@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/post/post1/</loc>
-    <lastmod>2024-04-09T08:43:57+08:00</lastmod>
+    <loc>http://localhost:1313/post/post3-brew/</loc>
+    <lastmod>2024-04-10T10:20:41+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2024-04-09T08:43:57+08:00</lastmod>
+    <lastmod>2024-04-10T10:20:41+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2024-04-10T10:20:41+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/post2-geoserver/</loc>
+    <lastmod>2024-04-10T10:13:32+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/post1-pg/</loc>
     <lastmod>2024-04-09T08:43:57+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/post0/</loc>
+    <loc>http://localhost:1313/post/post0-vscode/</loc>
     <lastmod>2024-04-02T15:04:05+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
