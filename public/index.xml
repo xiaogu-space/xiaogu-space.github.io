@@ -39,6 +39,7 @@ build-error: 0 (30 days)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;4.启动geoserver&lt;/strong&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;geoserver path/to/data/dir
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;5.浏览器访问&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;默认账号：admin,密码：geoserver&lt;/p&gt;
 &lt;p&gt;http://localhost:8080/geoserver/web&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web.png&#34;
 	

@@ -41,6 +41,8 @@ geoserver path/to/data/dir
 ```
 **5.浏览器访问**
 
+默认账号：admin,密码：geoserver
+
 http://localhost:8080/geoserver/web
 
 ![](/images/geoserver-web.png)
