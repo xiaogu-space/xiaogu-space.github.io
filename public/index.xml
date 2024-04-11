@@ -59,6 +59,83 @@ build-error: 0 (30 days)
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;2发布shp矢量数据&#34;&gt;2.发布shp矢量数据&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;2.1 数据准备&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;自己准备好shp格式数据，放到自定义数据目录下，比如：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/Users/xiaogu/test_data/shp/china/map.shp
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.2 创建工作空间&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;进入Geoserver的Web管理页面，在GeoServer中发布和部署地图数据涉及到的几个重要概念——工作空间（WorkSpace）、存储仓库（Store）、图层（Layer）和图层组(LayerGroup)等。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;工作空间&lt;/strong&gt; 是一个用于组织类似图层数据（数据集）的容器。常常会把某个项目或工程的相关图层数据存放到一个工作空间里。通过工作空间的使用，可以避免相同图层名的冲突。&lt;/p&gt;
+&lt;p&gt;例如，在名为country工作空间中的china图层，引用时使用的是&amp;quot;country:china&amp;quot;，这就可以与在另一个工作空间中同样名为china图层（demo:china）避免冲突。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;存储仓库&lt;/strong&gt; 是一实际的文件夹或数据集。在一个工作空间中可以包含几个存储仓库，因此在引用存储仓库时必须在存储仓库前加上工作空间的名称。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web3.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;新建工作空间&lt;/strong&gt; 单击&amp;quot;添加新的工作空间&amp;quot;，进入新建工作空间的界面，在这里需要输入工作空间的名字和命名空间URI。
+在Name文本框中输入&amp;quot;country&amp;quot;，在命名空间URI文本框中输入&amp;quot;http://localhost:8080/geoserver/country&amp;quot;，然后单击&amp;quot;保存&amp;quot;按钮。&lt;/p&gt;
+&lt;p&gt;注意：工作空间名称是描述项目的标识符，它不能超过十个字符或包含空格。命名空间URI（统一资源标识符）通常可以是与你的项目关联且添加了一个用于指示工作空间的尾随标识符的URL，命名空间URI不需要解析为实际有效的Web地址。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.3 在工作空间添加Shapefile&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在GeoServer的Web管理页面窗口的左边单击&amp;quot;数据&amp;quot;中的&amp;quot;存储仓库&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web5.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;点击&amp;quot;添加新的存储仓库&amp;quot;，进入新建数据源页面。在该窗口中需要确定数据源的类型。在GeoServer中，如果同时有栅格与矢量数据的话，则需要分别建立存储仓库。&lt;/p&gt;
+&lt;p&gt;在本实践中，我们使用的是矢量文件数据，因此选择&amp;quot;Shapefile&amp;quot;，进入新建矢量数据源窗口。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web6.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;img src=&#34;http://localhost:1313/images/geoserver-web7.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
