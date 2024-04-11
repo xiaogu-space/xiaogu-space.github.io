@@ -1,6 +1,6 @@
 ---
 title: 'GeoServer发布Shapefile矢量数据'
-description: 如果矢量数据太大，比如GeoJSON数据上百M甚至几个G的时候，在网页上直接加载方式显然不合理，包括数据请求，交互等都不友好；所以可以通过GeoServer将矢量数据发布为服务加载
+description: 如果矢量数据太大，比如GeoJSON数据上百M甚至几个G的时候，在网页上直接加载方式显然不合理，包括数据请求，交互等都不友好；所以可以通过GeoServer将矢量数据发布为服务加载。
 date: 2024-04-10T10:13:32+08:00
 draft: false
 image: /images/geoserver.png
