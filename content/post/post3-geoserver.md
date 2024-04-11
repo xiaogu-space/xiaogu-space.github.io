@@ -81,6 +81,9 @@ http://localhost:8080/geoserver/web
 ![](/images/geoserver-web4.png)
 
 ### 2.3 在工作空间添加Shapefile
+
+**添加存储仓库**
+
 * 在GeoServer的Web管理页面窗口的左边单击"数据"中的"存储仓库"
 
 ![](/images/geoserver-web5.png)
@@ -90,4 +93,56 @@ http://localhost:8080/geoserver/web
    在本实践中，我们使用的是矢量文件数据，因此选择"Shapefile"，进入新建矢量数据源窗口。
 
 ![](/images/geoserver-web6.png)
+
 ![](/images/geoserver-web7.png)
+
+**准备上传数据**
+
+按照下图所示设置各参数，将工作区设置为"cite"，将数据源名称设置为"demo"，然后设置数据对应的shapefile文件，需要注意的是，DBF的字符集需要选择“UTF-8”，否则字段会出现乱码。最后单击“保存”按钮。
+
+设置参数
+
+![](/images/geoserver-web8.png)
+
+保存成功
+
+![](/images/geoserver-web9.png)
+
+通过上面的设置之后，便可以指定需要发布为服务的矢量图层。
+
+### 2.4 发布图层
+
+在新建矢量数据源页面中单击"保存"按钮后，自动切换到新建图层页面。
+
+![](/images/geoserver-web10.png)
+
+选择“发布”链接，进入编辑图层页面。
+在该页面中包含了许多发布图层的选项。在数据选项卡中定位到“坐标参照系统”部分，首先在“定义SRS”文本框中输入“EPSG:4326”，并将“SRS处理”设置为“强制声明”。然后通过单击“从数据中计算”与“Compute from native bounds"计算并自动填充边框坐标，如下图所示：
+
+**服务名称**
+
+![](/images/geoserver-web11.png)
+
+**定义坐标系**
+
+![](/images/geoserver-web12.png)
+
+**设置包围盒**
+
+![](/images/geoserver-web13.png)
+
+最后在页面底部选择”保存“，进入到图层列表页面。
+
+### 2.5 预览图层
+
+在GeoServer的Web管理页面窗口的左边单击”数据“中的"图层预览"，在右边窗口列出了发布为服务的图层。定位到country:map图层，然后选择OpenLayers，将会弹出一个新的窗口，在该窗口中使用OpenLayers访问该图层的WMS服务。
+
+**图层列表**
+
+![](/images/geoserver-web14.png)
+
+**服务预览**
+
+![](/images/geoserver-web15.png)
+
+以上就是geoserver发布Shapefile的全部过程。
