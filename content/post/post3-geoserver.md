@@ -5,26 +5,28 @@ date: 2024-04-10T10:13:32+08:00
 draft: false
 image: /images/geoserver.png
 
+
 tags: [
     "GeoServer"
 ]
 
 ---
 
-# 1.Mac GeoServer 安装
 
-## 1.1 搜索是否可用安装包
+## Mac GeoServer 安装
+
+### 搜索是否可用安装包
 ```
 brew search geoserver
 
 ==> Formulae
 geoserver                                         geckodriver
 ```
-## 1.2 安装 geoserver
+### 安装 geoserver
 ```
 brew install geoserver
 ```
-## 1.3 成功之后查看信息,显示安装的是2.25.0版本
+### 成功之后查看信息,显示安装的是2.25.0版本
 ```
 brew info geoserver
 
@@ -43,11 +45,11 @@ install: 39 (30 days), 106 (90 days), 360 (365 days)
 install-on-request: 39 (30 days), 106 (90 days), 360 (365 days)
 build-error: 0 (30 days)
 ```
-## 1.4 启动geoserver
+### 启动geoserver
 ```
 geoserver path/to/data/dir
 ```
-## 1.5 浏览器访问
+### 浏览器访问
 
 默认账号：admin,密码：geoserver
 
@@ -56,8 +58,8 @@ http://localhost:8080/geoserver/web
 ![](/images/geoserver-web.png)
 ![](/images/geoserver-web0.png)
 
-# 2.发布shp矢量数据
-## 2.1 数据准备
+## 发布shp矢量数据
+### 数据准备
 
 自己准备好shp格式数据，放到自定义数据目录下，比如：
 
@@ -66,7 +68,7 @@ http://localhost:8080/geoserver/web
 ```
 ![](/images/geoserver-web1.png)
 
-## 2.2 创建工作空间
+### 创建工作空间
 
 进入Geoserver的Web管理页面，在GeoServer中发布和部署地图数据涉及到的几个重要概念——工作空间（WorkSpace）、存储仓库（Store）、图层（Layer）和图层组(LayerGroup)等。
 
@@ -87,7 +89,7 @@ http://localhost:8080/geoserver/web
 
 ![](/images/geoserver-web4.png)
 
-## 2.3 在工作空间添加Shapefile
+### 在工作空间添加Shapefile
 
 **添加存储仓库**
 
@@ -117,7 +119,7 @@ http://localhost:8080/geoserver/web
 
 通过上面的设置之后，便可以指定需要发布为服务的矢量图层。
 
-## 2.4 发布图层
+### 发布图层
 
 在新建矢量数据源页面中单击"保存"按钮后，自动切换到新建图层页面。
 
@@ -140,7 +142,7 @@ http://localhost:8080/geoserver/web
 
 最后在页面底部选择”保存“，进入到图层列表页面。
 
-## 2.5 预览图层
+### 预览图层
 
 在GeoServer的Web管理页面窗口的左边单击”数据“中的"图层预览"，在右边窗口列出了发布为服务的图层。定位到country:map图层，然后选择OpenLayers，将会弹出一个新的窗口，在该窗口中使用OpenLayers访问该图层的WMS服务。
 

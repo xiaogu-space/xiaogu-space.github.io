@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='如果矢量数据太大，比如GeoJSON数据上百M甚至几个G的时候，在网页上直接加载方式显然不合理，包括数据请求，交互等都不友好；所以可以通过GeoServer将矢量数据发布为服务加载'>
+<title>GeoServer发布Shapefile矢量数据</title>
+
+<link rel='canonical' href='http://localhost:1313/p/geoserver%E5%8F%91%E5%B8%83shapefile%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE/'>
+
+<link rel="stylesheet" href="/scss/style.min.b7646cd8e1e908b06a2985b34c0a8562ef427ea0a66d0980c634851845d22705.css"><meta property='og:title' content='GeoServer发布Shapefile矢量数据'>
+<meta property='og:description' content='如果矢量数据太大，比如GeoJSON数据上百M甚至几个G的时候，在网页上直接加载方式显然不合理，包括数据请求，交互等都不友好；所以可以通过GeoServer将矢量数据发布为服务加载'>
+<meta property='og:url' content='http://localhost:1313/p/geoserver%E5%8F%91%E5%B8%83shapefile%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE/'>
+<meta property='og:site_name' content='小谷时刻'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='GeoServer' /><meta property='article:published_time' content='2024-04-10T10:13:32&#43;08:00'/><meta property='article:modified_time' content='2024-04-10T10:13:32&#43;08:00'/><meta property='og:image' content='http://localhost:1313/images/geoserver.png' />
+<meta name="twitter:title" content="GeoServer发布Shapefile矢量数据">
+<meta name="twitter:description" content="如果矢量数据太大，比如GeoJSON数据上百M甚至几个G的时候，在网页上直接加载方式显然不合理，包括数据请求，交互等都不友好；所以可以通过GeoServer将矢量数据发布为服务加载"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/images/geoserver.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+
+                    
+                        
+                        <img src="/img/avatar_hu2f4460409b32cc1074edb0dcee1e8b7e_261016_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">小谷时刻</a></h1>
+            <h2 class="site-description">明月清风自在怀,任重道远常心态。坎坷人生从容走,否极自有安泰来。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a
+                        href='https://github.com/xiaogu-space'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="http://localhost:1313/" selected>中文</option>
+                        
+                            <option value="http://localhost:1313/en/" >English</option>
+                        
+                    </select>
+                </li>
+            
+
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#mac-geoserver-安装">Mac GeoServer 安装</a>
+      <ol>
+        <li><a href="#搜索是否可用安装包">搜索是否可用安装包</a></li>
+        <li><a href="#安装-geoserver">安装 geoserver</a></li>
+        <li><a href="#成功之后查看信息显示安装的是2250版本">成功之后查看信息,显示安装的是2.25.0版本</a></li>
+        <li><a href="#启动geoserver">启动geoserver</a></li>
+        <li><a href="#浏览器访问">浏览器访问</a></li>
+      </ol>
+    </li>
+    <li><a href="#发布shp矢量数据">发布shp矢量数据</a>
+      <ol>
+        <li><a href="#数据准备">数据准备</a></li>
+        <li><a href="#创建工作空间">创建工作空间</a></li>
+        <li><a href="#在工作空间添加shapefile">在工作空间添加Shapefile</a></li>
+        <li><a href="#发布图层">发布图层</a></li>
+        <li><a href="#预览图层">预览图层</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/geoserver%E5%8F%91%E5%B8%83shapefile%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE/">
+                
+                    <img src="/images/geoserver.png" loading="lazy" alt="Featured image of post GeoServer发布Shapefile矢量数据" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/geoserver%E5%8F%91%E5%B8%83shapefile%E7%9F%A2%E9%87%8F%E6%95%B0%E6%8D%AE/">GeoServer发布Shapefile矢量数据</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            如果矢量数据太大，比如GeoJSON数据上百M甚至几个G的时候，在网页上直接加载方式显然不合理，包括数据请求，交互等都不友好；所以可以通过GeoServer将矢量数据发布为服务加载
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 10, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="mac-geoserver-安装">Mac GeoServer 安装</h2>
+<h3 id="搜索是否可用安装包">搜索是否可用安装包</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">brew search geoserver
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">==&gt; Formulae
+</span></span><span class="line"><span class="cl">geoserver                                         geckodriver
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="安装-geoserver">安装 geoserver</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">brew install geoserver
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="成功之后查看信息显示安装的是2250版本">成功之后查看信息,显示安装的是2.25.0版本</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">brew info geoserver
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">==&gt; geoserver: stable 2.25.0 (bottled)
+</span></span><span class="line"><span class="cl">Java server to share and edit geospatial data
+</span></span><span class="line"><span class="cl">https://geoserver.org/
+</span></span><span class="line"><span class="cl">/opt/homebrew/Cellar/geoserver/2.25.0 (885 files, 125.0MB) *
+</span></span><span class="line"><span class="cl">  Poured from bottle using the formulae.brew.sh API on 2024-04-10 at 10:15:55
+</span></span><span class="line"><span class="cl">From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/g/geoserver.rb
+</span></span><span class="line"><span class="cl">License: GPL-2.0-or-later
+</span></span><span class="line"><span class="cl">==&gt; Caveats
+</span></span><span class="line"><span class="cl">To start geoserver:
+</span></span><span class="line"><span class="cl">  geoserver path/to/data/dir
+</span></span><span class="line"><span class="cl">==&gt; Analytics
+</span></span><span class="line"><span class="cl">install: 39 (30 days), 106 (90 days), 360 (365 days)
+</span></span><span class="line"><span class="cl">install-on-request: 39 (30 days), 106 (90 days), 360 (365 days)
+</span></span><span class="line"><span class="cl">build-error: 0 (30 days)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="启动geoserver">启动geoserver</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">geoserver path/to/data/dir
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="浏览器访问">浏览器访问</h3>
+<p>默认账号：admin,密码：geoserver</p>
+<p>http://localhost:8080/geoserver/web</p>
+<p><img src="/images/geoserver-web.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>
+<img src="/images/geoserver-web0.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="发布shp矢量数据">发布shp矢量数据</h2>
+<h3 id="数据准备">数据准备</h3>
+<p>自己准备好shp格式数据，放到自定义数据目录下，比如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/Users/xiaogu/test_data/shp/china/map.shp
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/images/geoserver-web1.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="创建工作空间">创建工作空间</h3>
+<p>进入Geoserver的Web管理页面，在GeoServer中发布和部署地图数据涉及到的几个重要概念——工作空间（WorkSpace）、存储仓库（Store）、图层（Layer）和图层组(LayerGroup)等。</p>
+<p><img src="/images/geoserver-web2.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><strong>工作空间</strong> 是一个用于组织类似图层数据（数据集）的容器。常常会把某个项目或工程的相关图层数据存放到一个工作空间里。通过工作空间的使用，可以避免相同图层名的冲突。</p>
+<p>例如，在名为country工作空间中的china图层，引用时使用的是&quot;country:china&quot;，这就可以与在另一个工作空间中同样名为china图层（demo:china）避免冲突。</p>
+<p><strong>存储仓库</strong> 是一实际的文件夹或数据集。在一个工作空间中可以包含几个存储仓库，因此在引用存储仓库时必须在存储仓库前加上工作空间的名称。</p>
+<p><img src="/images/geoserver-web3.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><strong>新建工作空间</strong> 单击&quot;添加新的工作空间&quot;，进入新建工作空间的界面，在这里需要输入工作空间的名字和命名空间URI。
+在Name文本框中输入&quot;country&quot;，在命名空间URI文本框中输入&quot;http://localhost:8080/geoserver/country&quot;，然后单击&quot;保存&quot;按钮。</p>
+<p>注意：工作空间名称是描述项目的标识符，它不能超过十个字符或包含空格。命名空间URI（统一资源标识符）通常可以是与你的项目关联且添加了一个用于指示工作空间的尾随标识符的URL，命名空间URI不需要解析为实际有效的Web地址。</p>
+<p><img src="/images/geoserver-web4.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="在工作空间添加shapefile">在工作空间添加Shapefile</h3>
+<p><strong>添加存储仓库</strong></p>
+<ul>
+<li>在GeoServer的Web管理页面窗口的左边单击&quot;数据&quot;中的&quot;存储仓库&quot;</li>
+</ul>
+<p><img src="/images/geoserver-web5.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li>
+<p>点击&quot;添加新的存储仓库&quot;，进入新建数据源页面。在该窗口中需要确定数据源的类型。在GeoServer中，如果同时有栅格与矢量数据的话，则需要分别建立存储仓库。</p>
+<p>在本实践中，我们使用的是矢量文件数据，因此选择&quot;Shapefile&quot;，进入新建矢量数据源窗口。</p>
+</li>
+</ul>
+<p><img src="/images/geoserver-web6.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="/images/geoserver-web7.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><strong>准备上传数据</strong></p>
+<p>按照下图所示设置各参数，将工作区设置为&quot;cite&quot;，将数据源名称设置为&quot;demo&quot;，然后设置数据对应的shapefile文件，需要注意的是，DBF的字符集需要选择“UTF-8”，否则字段会出现乱码。最后单击“保存”按钮。</p>
+<p>设置参数</p>
+<p><img src="/images/geoserver-web8.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>保存成功</p>
+<p><img src="/images/geoserver-web9.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>通过上面的设置之后，便可以指定需要发布为服务的矢量图层。</p>
+<h3 id="发布图层">发布图层</h3>
+<p>在新建矢量数据源页面中单击&quot;保存&quot;按钮后，自动切换到新建图层页面。</p>
+<p><img src="/images/geoserver-web10.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>选择“发布”链接，进入编辑图层页面。
+在该页面中包含了许多发布图层的选项。在数据选项卡中定位到“坐标参照系统”部分，首先在“定义SRS”文本框中输入“EPSG:4326”，并将“SRS处理”设置为“强制声明”。然后通过单击“从数据中计算”与“Compute from native bounds&quot;计算并自动填充边框坐标，如下图所示：</p>
+<p><strong>服务名称</strong></p>
+<p><img src="/images/geoserver-web11.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><strong>定义坐标系</strong></p>
+<p><img src="/images/geoserver-web12.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><strong>设置包围盒</strong></p>
+<p><img src="/images/geoserver-web13.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>最后在页面底部选择”保存“，进入到图层列表页面。</p>
+<h3 id="预览图层">预览图层</h3>
+<p>在GeoServer的Web管理页面窗口的左边单击”数据“中的&quot;图层预览&quot;，在右边窗口列出了发布为服务的图层。定位到country:map图层，然后选择OpenLayers，将会弹出一个新的窗口，在该窗口中使用OpenLayers访问该图层的WMS服务。</p>
+<p><strong>图层列表</strong></p>
+<p><img src="/images/geoserver-web14.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><strong>服务预览</strong></p>
+<p><img src="/images/geoserver-web15.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>以上就是geoserver发布Shapefile的全部过程。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/geoserver/">GeoServer</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 小谷时刻
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.21.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
