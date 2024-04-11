@@ -26,7 +26,7 @@ geoserver                                         geckodriver
 ```
 brew install geoserver
 ```
-### 成功之后查看信息,显示安装的是2.25.0版本
+### 成功之后查看信息
 ```
 brew info geoserver
 
