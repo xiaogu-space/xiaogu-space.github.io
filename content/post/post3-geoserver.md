@@ -6,18 +6,18 @@ image: /images/geoserver.png
 ---
 ## 1.Mac GeoServer 安装
 
-**1.1 搜索是否可用安装包**
+### 1.1 搜索是否可用安装包
 ```
 brew search geoserver
 
 ==> Formulae
 geoserver                                         geckodriver
 ```
-**1.2 安装 geoserver**
+### 1.2 安装 geoserver
 ```
 brew install geoserver
 ```
-**1.3 成功之后查看信息,显示安装的是2.25.0版本**
+### 1.3 成功之后查看信息,显示安装的是2.25.0版本
 ```
 brew info geoserver
 
@@ -36,11 +36,11 @@ install: 39 (30 days), 106 (90 days), 360 (365 days)
 install-on-request: 39 (30 days), 106 (90 days), 360 (365 days)
 build-error: 0 (30 days)
 ```
-**1.4 启动geoserver**
+### 1.4 启动geoserver
 ```
 geoserver path/to/data/dir
 ```
-**5.浏览器访问**
+### 1.5 浏览器访问
 
 默认账号：admin,密码：geoserver
 
@@ -50,7 +50,7 @@ http://localhost:8080/geoserver/web
 ![](/images/geoserver-web0.png)
 
 ## 2.发布shp矢量数据
-**2.1 数据准备**
+### 2.1 数据准备
 
 自己准备好shp格式数据，放到自定义数据目录下，比如：
 
@@ -59,7 +59,7 @@ http://localhost:8080/geoserver/web
 ```
 ![](/images/geoserver-web1.png)
 
-**2.2 创建工作空间**
+### 2.2 创建工作空间
 
 进入Geoserver的Web管理页面，在GeoServer中发布和部署地图数据涉及到的几个重要概念——工作空间（WorkSpace）、存储仓库（Store）、图层（Layer）和图层组(LayerGroup)等。
 
@@ -80,7 +80,7 @@ http://localhost:8080/geoserver/web
 
 ![](/images/geoserver-web4.png)
 
-**2.3 在工作空间添加Shapefile**
+### 2.3 在工作空间添加Shapefile
 * 在GeoServer的Web管理页面窗口的左边单击"数据"中的"存储仓库"
 
 ![](/images/geoserver-web5.png)
