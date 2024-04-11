@@ -61,11 +61,11 @@ params:
         #     src: img/avatar.jpg
 
     article:
-        math: false
+        math: true
         toc: true
         readingTime: true
         license:
-            enabled: true
+            enabled: false
             default: Licensed under CC BY-NC-SA 4.0
 
     comments:
