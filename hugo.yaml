@@ -2,6 +2,7 @@ baseURL: "https://xiaogu-space.github.io"
 languageCode: "zh-cn"
 title: "小谷时刻"
 theme: "hugo-theme-stack"
+enableGitInfo: true
 
 params:
   sidebar:

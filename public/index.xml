@@ -12,15 +12,15 @@
         <pubDate>Wed, 10 Apr 2024 10:13:32 +0800</pubDate>
         
         <guid>http://localhost:1313/post/post3-geoserver/</guid>
-        <description>&lt;img src="http://localhost:1313/images/geoserver.png" alt="Featured image of post GeoServer发布Shapefile矢量数据" /&gt;&lt;h2 id=&#34;1mac-geoserver-安装&#34;&gt;1.Mac GeoServer 安装&lt;/h2&gt;
-&lt;h3 id=&#34;11-搜索是否可用安装包&#34;&gt;1.1 搜索是否可用安装包&lt;/h3&gt;
+        <description>&lt;img src="http://localhost:1313/images/geoserver.png" alt="Featured image of post GeoServer发布Shapefile矢量数据" /&gt;&lt;h1 id=&#34;1mac-geoserver-安装&#34;&gt;1.Mac GeoServer 安装&lt;/h1&gt;
+&lt;h2 id=&#34;11-搜索是否可用安装包&#34;&gt;1.1 搜索是否可用安装包&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew search geoserver
 
 ==&amp;gt; Formulae
 geoserver                                         geckodriver
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;12-安装-geoserver&#34;&gt;1.2 安装 geoserver&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;12-安装-geoserver&#34;&gt;1.2 安装 geoserver&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew install geoserver
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;13-成功之后查看信息显示安装的是2250版本&#34;&gt;1.3 成功之后查看信息,显示安装的是2.25.0版本&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;13-成功之后查看信息显示安装的是2250版本&#34;&gt;1.3 成功之后查看信息,显示安装的是2.25.0版本&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew info geoserver
 
 ==&amp;gt; geoserver: stable 2.25.0 (bottled)
@@ -37,9 +37,9 @@ To start geoserver:
 install: 39 (30 days), 106 (90 days), 360 (365 days)
 install-on-request: 39 (30 days), 106 (90 days), 360 (365 days)
 build-error: 0 (30 days)
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;14-启动geoserver&#34;&gt;1.4 启动geoserver&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;14-启动geoserver&#34;&gt;1.4 启动geoserver&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;geoserver path/to/data/dir
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;15-浏览器访问&#34;&gt;1.5 浏览器访问&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;15-浏览器访问&#34;&gt;1.5 浏览器访问&lt;/h2&gt;
 &lt;p&gt;默认账号：admin,密码：geoserver&lt;/p&gt;
 &lt;p&gt;http://localhost:8080/geoserver/web&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web.png&#34;
@@ -58,8 +58,8 @@ build-error: 0 (30 days)
 	
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;2发布shp矢量数据&#34;&gt;2.发布shp矢量数据&lt;/h2&gt;
-&lt;h3 id=&#34;21-数据准备&#34;&gt;2.1 数据准备&lt;/h3&gt;
+&lt;h1 id=&#34;2发布shp矢量数据&#34;&gt;2.发布shp矢量数据&lt;/h1&gt;
+&lt;h2 id=&#34;21-数据准备&#34;&gt;2.1 数据准备&lt;/h2&gt;
 &lt;p&gt;自己准备好shp格式数据，放到自定义数据目录下，比如：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/Users/xiaogu/test_data/shp/china/map.shp
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web1.png&#34;
@@ -70,7 +70,7 @@ build-error: 0 (30 days)
 	
 	
 &gt;&lt;/p&gt;
-&lt;h3 id=&#34;22-创建工作空间&#34;&gt;2.2 创建工作空间&lt;/h3&gt;
+&lt;h2 id=&#34;22-创建工作空间&#34;&gt;2.2 创建工作空间&lt;/h2&gt;
 &lt;p&gt;进入Geoserver的Web管理页面，在GeoServer中发布和部署地图数据涉及到的几个重要概念——工作空间（WorkSpace）、存储仓库（Store）、图层（Layer）和图层组(LayerGroup)等。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web2.png&#34;
 	
@@ -102,7 +102,7 @@ build-error: 0 (30 days)
 	
 	
 &gt;&lt;/p&gt;
-&lt;h3 id=&#34;23-在工作空间添加shapefile&#34;&gt;2.3 在工作空间添加Shapefile&lt;/h3&gt;
+&lt;h2 id=&#34;23-在工作空间添加shapefile&#34;&gt;2.3 在工作空间添加Shapefile&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;添加存储仓库&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;在GeoServer的Web管理页面窗口的左边单击&amp;quot;数据&amp;quot;中的&amp;quot;存储仓库&amp;quot;&lt;/li&gt;
@@ -158,7 +158,7 @@ build-error: 0 (30 days)
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;通过上面的设置之后，便可以指定需要发布为服务的矢量图层。&lt;/p&gt;
-&lt;h3 id=&#34;24-发布图层&#34;&gt;2.4 发布图层&lt;/h3&gt;
+&lt;h2 id=&#34;24-发布图层&#34;&gt;2.4 发布图层&lt;/h2&gt;
 &lt;p&gt;在新建矢量数据源页面中单击&amp;quot;保存&amp;quot;按钮后，自动切换到新建图层页面。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web10.png&#34;
 	
@@ -198,7 +198,7 @@ build-error: 0 (30 days)
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;最后在页面底部选择”保存“，进入到图层列表页面。&lt;/p&gt;
-&lt;h3 id=&#34;25-预览图层&#34;&gt;2.5 预览图层&lt;/h3&gt;
+&lt;h2 id=&#34;25-预览图层&#34;&gt;2.5 预览图层&lt;/h2&gt;
 &lt;p&gt;在GeoServer的Web管理页面窗口的左边单击”数据“中的&amp;quot;图层预览&amp;quot;，在右边窗口列出了发布为服务的图层。定位到country:map图层，然后选择OpenLayers，将会弹出一个新的窗口，在该窗口中使用OpenLayers访问该图层的WMS服务。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;图层列表&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web14.png&#34;
