@@ -47,5 +47,6 @@ geoserver path/to/data/dir
 http://localhost:8080/geoserver/web
 
 ![](/images/geoserver-web.png)
+![](/images/geoserver-web0.png)
 
 ## 2.发布shp矢量数据
