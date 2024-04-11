@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='1.Mac GeoServer 安装 1.1 搜索是否可用安装包 brew search geoserver ==&amp;gt; Formulae geoserver geckodriver 1.2 安装 geoserver brew install geoserver 1.3 成功之后查看信息,显示安装的是2.25.0版本 brew info geoserver ==&amp;gt; geoserver: stable 2.25.0 (bottled) Java server to share and edit geospatial data https://geoserver.org/ /opt/homebrew/Cellar/geoserver/2.25.0 (885 files, 125.0MB) * Poured from bottle using the formulae.brew.sh API on 2024-04-10 at 10:15:55 From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/g/geoserver.rb License: GPL-2.0-or-later ==&amp;gt; Caveats To start geoserver: geoserver path/to/data/dir ==&amp;gt; Analytics install: 39 (30 days), 106 (90 days), 360 (365 days) install-on-request: 39 (30 days), 106 (90 days), 360 (365 days) build-error: 0 (30 days) 1.'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='如果矢量数据太大，比如GeoJSON数据上百M甚至几个G的时候，在网页上直接加载方式显然不合理，包括数据请求，交互等都不友好；所以可以通过GeoServer将矢量数据发布为服务加载'>
 <title>GeoServer发布Shapefile矢量数据</title>
 
 <link rel='canonical' href='http://localhost:1313/post/post3-geoserver/'>
 
 <link rel="stylesheet" href="/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='GeoServer发布Shapefile矢量数据'>
-<meta property='og:description' content='1.Mac GeoServer 安装 1.1 搜索是否可用安装包 brew search geoserver ==&amp;gt; Formulae geoserver geckodriver 1.2 安装 geoserver brew install geoserver 1.3 成功之后查看信息,显示安装的是2.25.0版本 brew info geoserver ==&amp;gt; geoserver: stable 2.25.0 (bottled) Java server to share and edit geospatial data https://geoserver.org/ /opt/homebrew/Cellar/geoserver/2.25.0 (885 files, 125.0MB) * Poured from bottle using the formulae.brew.sh API on 2024-04-10 at 10:15:55 From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/g/geoserver.rb License: GPL-2.0-or-later ==&amp;gt; Caveats To start geoserver: geoserver path/to/data/dir ==&amp;gt; Analytics install: 39 (30 days), 106 (90 days), 360 (365 days) install-on-request: 39 (30 days), 106 (90 days), 360 (365 days) build-error: 0 (30 days) 1.'>
+<meta property='og:description' content='如果矢量数据太大，比如GeoJSON数据上百M甚至几个G的时候，在网页上直接加载方式显然不合理，包括数据请求，交互等都不友好；所以可以通过GeoServer将矢量数据发布为服务加载'>
 <meta property='og:url' content='http://localhost:1313/post/post3-geoserver/'>
 <meta property='og:site_name' content='小谷时刻'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-04-10T10:13:32&#43;08:00'/><meta property='article:modified_time' content='2024-04-10T10:13:32&#43;08:00'/><meta property='og:image' content='http://localhost:1313/images/geoserver.png' />
 <meta name="twitter:title" content="GeoServer发布Shapefile矢量数据">
-<meta name="twitter:description" content="1.Mac GeoServer 安装 1.1 搜索是否可用安装包 brew search geoserver ==&amp;gt; Formulae geoserver geckodriver 1.2 安装 geoserver brew install geoserver 1.3 成功之后查看信息,显示安装的是2.25.0版本 brew info geoserver ==&amp;gt; geoserver: stable 2.25.0 (bottled) Java server to share and edit geospatial data https://geoserver.org/ /opt/homebrew/Cellar/geoserver/2.25.0 (885 files, 125.0MB) * Poured from bottle using the formulae.brew.sh API on 2024-04-10 at 10:15:55 From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/g/geoserver.rb License: GPL-2.0-or-later ==&amp;gt; Caveats To start geoserver: geoserver path/to/data/dir ==&amp;gt; Analytics install: 39 (30 days), 106 (90 days), 360 (365 days) install-on-request: 39 (30 days), 106 (90 days), 360 (365 days) build-error: 0 (30 days) 1."><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="如果矢量数据太大，比如GeoJSON数据上百M甚至几个G的时候，在网页上直接加载方式显然不合理，包括数据请求，交互等都不友好；所以可以通过GeoServer将矢量数据发布为服务加载"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/images/geoserver.png' />
     </head>
     <body class="
@@ -143,6 +143,10 @@
             <a href="/post/post3-geoserver/">GeoServer发布Shapefile矢量数据</a>
         </h2>
     
+        
+        <h3 class="article-subtitle">
+            如果矢量数据太大，比如GeoJSON数据上百M甚至几个G的时候，在网页上直接加载方式显然不合理，包括数据请求，交互等都不友好；所以可以通过GeoServer将矢量数据发布为服务加载
+        </h3>
         
     </div>
 

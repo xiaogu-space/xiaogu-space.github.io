@@ -128,8 +128,8 @@ build-error: 0 (30 days)
 	loading=&#34;lazy&#34;
 	
 	
-&gt;
-&lt;img src=&#34;http://localhost:1313/images/geoserver-web7.png&#34;
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web7.png&#34;
 	
 	
 	
@@ -137,6 +137,88 @@ build-error: 0 (30 days)
 	
 	
 &gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;准备上传数据&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;按照下图所示设置各参数，将工作区设置为&amp;quot;cite&amp;quot;，将数据源名称设置为&amp;quot;demo&amp;quot;，然后设置数据对应的shapefile文件，需要注意的是，DBF的字符集需要选择“UTF-8”，否则字段会出现乱码。最后单击“保存”按钮。&lt;/p&gt;
+&lt;p&gt;设置参数&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web8.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;保存成功&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web9.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;通过上面的设置之后，便可以指定需要发布为服务的矢量图层。&lt;/p&gt;
+&lt;h3 id=&#34;24-发布图层&#34;&gt;2.4 发布图层&lt;/h3&gt;
+&lt;p&gt;在新建矢量数据源页面中单击&amp;quot;保存&amp;quot;按钮后，自动切换到新建图层页面。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web10.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;选择“发布”链接，进入编辑图层页面。
+在该页面中包含了许多发布图层的选项。在数据选项卡中定位到“坐标参照系统”部分，首先在“定义SRS”文本框中输入“EPSG:4326”，并将“SRS处理”设置为“强制声明”。然后通过单击“从数据中计算”与“Compute from native bounds&amp;quot;计算并自动填充边框坐标，如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;服务名称&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web11.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;定义坐标系&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web12.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;设置包围盒&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web13.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;最后在页面底部选择”保存“，进入到图层列表页面。&lt;/p&gt;
+&lt;h3 id=&#34;25-预览图层&#34;&gt;2.5 预览图层&lt;/h3&gt;
+&lt;p&gt;在GeoServer的Web管理页面窗口的左边单击”数据“中的&amp;quot;图层预览&amp;quot;，在右边窗口列出了发布为服务的图层。定位到country:map图层，然后选择OpenLayers，将会弹出一个新的窗口，在该窗口中使用OpenLayers访问该图层的WMS服务。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;图层列表&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web14.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;服务预览&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/geoserver-web15.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;以上就是geoserver发布Shapefile的全部过程。&lt;/p&gt;
 </description>
         </item>
         <item>
