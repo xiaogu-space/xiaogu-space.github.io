@@ -4,6 +4,9 @@ date: 2024-04-09T08:43:57+08:00
 draft: false
 image: /images/5460228_3092.jpg
 
+categories: [
+    "数据库"
+]
 tags: [
     "PostgreSQL"
 ]

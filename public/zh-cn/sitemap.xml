@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2024-04-23T08:56:31+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="http://localhost:1313/categories/"
+                />
+  </url><url>
     <loc>http://localhost:1313/tags/postgresql/</loc>
     <lastmod>2024-04-23T08:56:31+08:00</lastmod>
   </url><url>
@@ -23,6 +36,9 @@
                 hreflang="zh-cn"
                 href="http://localhost:1313/tags/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2024-04-23T08:56:31+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2024-04-23T08:56:31+08:00</lastmod>
@@ -55,19 +71,10 @@
     <loc>http://localhost:1313/p/mac-brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2024-04-03T10:20:41+08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2024-04-03T10:20:41+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/p/mac-vscode%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     <lastmod>2024-04-02T15:04:05+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://localhost:1313/categories/"
-                />
   </url>
 </urlset>
