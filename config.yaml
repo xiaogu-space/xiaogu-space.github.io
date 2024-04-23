@@ -150,7 +150,7 @@ params:
             - type: search
             - type: archives
               params:
-                  limit: 5
+                  limit: 10
             - type: categories
               params:
                   limit: 10
