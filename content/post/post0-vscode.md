@@ -3,6 +3,10 @@ title: 'Mac VsCode快捷键'
 date: 2024-04-02T15:04:05+08:00
 draft: false
 image: /images/1712050172566827.png
+
+categories : [
+    "工具"
+]
 ---
 
 ## 全局

@@ -1,7 +1,7 @@
 baseurl: https://xiaogu-space.github.io
 languageCode: zh-cn
 theme: hugo-theme-stack
-paginate: 5
+paginate: 10
 title: 小谷时刻
 # copyright: Example Person
 
