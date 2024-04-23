@@ -4,7 +4,9 @@ date : 2024-04-17T19:54:16+08:00
 draft : false
 image: /images/es1.png
 
-
+categories: [
+    "数据库"
+]
 tags: [
     "Elasticsearch"
 ]
