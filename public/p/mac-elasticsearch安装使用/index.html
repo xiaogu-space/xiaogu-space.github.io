@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='安装docker 搜索软件包 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 brew search docker ==&amp;gt; Formulae docker docker-machine-driver-vultr docker-buildx docker-machine-nfs docker-clean docker-machine-parallels docker-completion docker-slim docker-compose docker-squash docker-credential-helper dockerfile-language-server docker-credential-helper-ecr dockerize docker-gen lazydocker docker-ls powerman-dockerize docker-machine dockly docker-machine-driver-vmware mockery ==&amp;gt; Casks docker dockey dozer docker-toolbox dockx 安装docker 1 brew install --cask docker 注册登录，成功如下图 安装Elasticsearch 使用 Docker 安装并运行 Elasticsearch
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='安装docker 搜索软件包 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 brew search docker ==&amp;gt; Formulae docker docker-machine-driver-vultr docker-buildx docker-machine-nfs docker-clean docker-machine-parallels docker-completion docker-slim docker-compose docker-squash docker-credential-helper dockerfile-language-server docker-credential-helper-ecr dockerize docker-gen lazydocker docker-ls powerman-dockerize docker-machine dockly docker-machine-driver-vmware mockery ==&amp;gt; Casks docker dockey dozer docker-toolbox dockx 安装docker 1 brew install --cask docker 注册登录，成功如下图 安装运行Elasticsearch 使用 Docker 安装并运行 Elasticsearch
 Docker 命令安装运行 1 2 3 docker network create elastic docker pull docker.'>
 <title>Mac Elasticsearch安装使用</title>
 
 <link rel='canonical' href='http://localhost:1313/p/mac-elasticsearch%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/'>
 
 <link rel="stylesheet" href="/scss/style.min.b7646cd8e1e908b06a2985b34c0a8562ef427ea0a66d0980c634851845d22705.css"><meta property='og:title' content='Mac Elasticsearch安装使用'>
-<meta property='og:description' content='安装docker 搜索软件包 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 brew search docker ==&amp;gt; Formulae docker docker-machine-driver-vultr docker-buildx docker-machine-nfs docker-clean docker-machine-parallels docker-completion docker-slim docker-compose docker-squash docker-credential-helper dockerfile-language-server docker-credential-helper-ecr dockerize docker-gen lazydocker docker-ls powerman-dockerize docker-machine dockly docker-machine-driver-vmware mockery ==&amp;gt; Casks docker dockey dozer docker-toolbox dockx 安装docker 1 brew install --cask docker 注册登录，成功如下图 安装Elasticsearch 使用 Docker 安装并运行 Elasticsearch
+<meta property='og:description' content='安装docker 搜索软件包 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 brew search docker ==&amp;gt; Formulae docker docker-machine-driver-vultr docker-buildx docker-machine-nfs docker-clean docker-machine-parallels docker-completion docker-slim docker-compose docker-squash docker-credential-helper dockerfile-language-server docker-credential-helper-ecr dockerize docker-gen lazydocker docker-ls powerman-dockerize docker-machine dockly docker-machine-driver-vmware mockery ==&amp;gt; Casks docker dockey dozer docker-toolbox dockx 安装docker 1 brew install --cask docker 注册登录，成功如下图 安装运行Elasticsearch 使用 Docker 安装并运行 Elasticsearch
 Docker 命令安装运行 1 2 3 docker network create elastic docker pull docker.'>
 <meta property='og:url' content='http://localhost:1313/p/mac-elasticsearch%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/'>
 <meta property='og:site_name' content='小谷时刻'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Elasticsearch' /><meta property='article:published_time' content='2024-04-17T19:54:16&#43;08:00'/><meta property='article:modified_time' content='2024-04-17T19:54:16&#43;08:00'/><meta property='og:image' content='http://localhost:1313/images/es1.png' />
 <meta name="twitter:title" content="Mac Elasticsearch安装使用">
-<meta name="twitter:description" content="安装docker 搜索软件包 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 brew search docker ==&amp;gt; Formulae docker docker-machine-driver-vultr docker-buildx docker-machine-nfs docker-clean docker-machine-parallels docker-completion docker-slim docker-compose docker-squash docker-credential-helper dockerfile-language-server docker-credential-helper-ecr dockerize docker-gen lazydocker docker-ls powerman-dockerize docker-machine dockly docker-machine-driver-vmware mockery ==&amp;gt; Casks docker dockey dozer docker-toolbox dockx 安装docker 1 brew install --cask docker 注册登录，成功如下图 安装Elasticsearch 使用 Docker 安装并运行 Elasticsearch
+<meta name="twitter:description" content="安装docker 搜索软件包 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 brew search docker ==&amp;gt; Formulae docker docker-machine-driver-vultr docker-buildx docker-machine-nfs docker-clean docker-machine-parallels docker-completion docker-slim docker-compose docker-squash docker-credential-helper dockerfile-language-server docker-credential-helper-ecr dockerize docker-gen lazydocker docker-ls powerman-dockerize docker-machine dockly docker-machine-driver-vmware mockery ==&amp;gt; Casks docker dockey dozer docker-toolbox dockx 安装docker 1 brew install --cask docker 注册登录，成功如下图 安装运行Elasticsearch 使用 Docker 安装并运行 Elasticsearch
 Docker 命令安装运行 1 2 3 docker network create elastic docker pull docker."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/images/es1.png' />
     </head>
@@ -177,7 +177,7 @@ Docker 命令安装运行 1 2 3 docker network create elastic docker pull docker
         <li><a href="#注册登录成功如下图">注册登录，成功如下图</a></li>
       </ol>
     </li>
-    <li><a href="#安装elasticsearch">安装Elasticsearch</a>
+    <li><a href="#安装运行elasticsearch">安装运行Elasticsearch</a>
       <ol>
         <li><a href="#docker-命令安装运行">Docker 命令安装运行</a></li>
         <li><a href="#复制生成的elastic密码和注册令牌">复制生成的elastic密码和注册令牌</a></li>
@@ -185,6 +185,7 @@ Docker 命令安装运行 1 2 3 docker network create elastic docker pull docker
         <li><a href="#验证是否成功">验证是否成功</a></li>
       </ol>
     </li>
+    <li><a href="#安装运行-kibana">安装运行 Kibana</a></li>
   </ol>
 </nav>
         </div>
@@ -324,7 +325,7 @@ Docker 命令安装运行 1 2 3 docker network create elastic docker pull docker
 	
 	
 ></p>
-<h2 id="安装elasticsearch">安装Elasticsearch</h2>
+<h2 id="安装运行elasticsearch">安装运行Elasticsearch</h2>
 <p>使用 Docker 安装并运行 Elasticsearch</p>
 <h3 id="docker-命令安装运行">Docker 命令安装运行</h3>
 <div class="highlight"><div class="chroma">
@@ -340,7 +341,15 @@ Docker 命令安装运行 1 2 3 docker network create elastic docker pull docker
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="复制生成的elastic密码和注册令牌">复制生成的elastic密码和注册令牌</h3>
-<p>复制生成的elastic密码和注册令牌，它们将输出到您的终端。您将使用这些凭据在 Elasticsearch 集群中注册 Kibana 并登录。这些凭据仅在您首次启动 Elasticsearch 时显示。</p>
+<p>复制生成的elastic密码和注册令牌，它们将输出到您的终端。您将使用这些凭据在 Elasticsearch 集群中注册 Kibana 并登录。这些凭据仅在您首次启动 Elasticsearch 时显示。请自行记录。</p>
+<p><img src="/images/es4.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
 <p>我们建议将elastic密码存储为 shell 中的环境变量。我的例子：
 <img src="/images/es2.png"
 	
@@ -355,7 +364,7 @@ Docker 命令安装运行 1 2 3 docker network create elastic docker pull docker
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">export</span> <span class="n">ELASTIC_PASSWORD</span><span class="o">=</span><span class="s2">&#34;b5OyfgBHvYzaRX-ID+eK&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">export</span> <span class="n">ELASTIC_PASSWORD</span><span class="o">=</span><span class="s2">&#34;Pjp6q62Tc1tTUdHmgEPO&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="将http_cacrt-ssl证书复制到您的计算机上">将http_ca.crt SSL证书复制到您的计算机上</h3>
@@ -378,6 +387,37 @@ Docker 命令安装运行 1 2 3 docker network create elastic docker pull docker
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="/images/es3.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="安装运行-kibana">安装运行 Kibana</h2>
+<p>Kibana 是 Elastic 的用户界面。它非常适合初学者使用 Elasticsearch 并探索数据。我们将使用 Kibana 中的 Dev Tools 控制台向 Elasticsearch 发送 REST API 调用。</p>
+<p>在一个新的终端会话中，启动 Kibana 并将其连接到您的 Elasticsearch 容器。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker pull docker.elastic.co/kibana/kibana:8.13.2
+</span></span><span class="line"><span class="cl">docker run --name kibana --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.13.2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装成功
+<img src="/images/es5.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>
+在浏览器打开 http://localhost:5601/ 并输入上面的 Configure Kibana to use this cluster Enrollment Token，并输入账号密码。
+<img src="/images/es6.png"
 	
 	
 	

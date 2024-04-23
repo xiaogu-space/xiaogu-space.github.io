@@ -6,7 +6,15 @@
         <description>Recent content on 小谷时刻</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 17 Apr 2024 19:54:16 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 23 Apr 2024 08:56:31 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PostgreSQL LIKE 索引优化</title>
+        <link>http://localhost:1313/p/postgresql-like-%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/</link>
+        <pubDate>Tue, 23 Apr 2024 08:56:31 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/postgresql-like-%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Mac Elasticsearch安装使用</title>
         <link>http://localhost:1313/p/mac-elasticsearch%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Wed, 17 Apr 2024 19:54:16 +0800</pubDate>
@@ -72,7 +80,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;安装elasticsearch&#34;&gt;安装Elasticsearch&lt;/h2&gt;
+&lt;h2 id=&#34;安装运行elasticsearch&#34;&gt;安装运行Elasticsearch&lt;/h2&gt;
 &lt;p&gt;使用 Docker 安装并运行 Elasticsearch&lt;/p&gt;
 &lt;h3 id=&#34;docker-命令安装运行&#34;&gt;Docker 命令安装运行&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -88,7 +96,15 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;复制生成的elastic密码和注册令牌&#34;&gt;复制生成的elastic密码和注册令牌&lt;/h3&gt;
-&lt;p&gt;复制生成的elastic密码和注册令牌，它们将输出到您的终端。您将使用这些凭据在 Elasticsearch 集群中注册 Kibana 并登录。这些凭据仅在您首次启动 Elasticsearch 时显示。&lt;/p&gt;
+&lt;p&gt;复制生成的elastic密码和注册令牌，它们将输出到您的终端。您将使用这些凭据在 Elasticsearch 集群中注册 Kibana 并登录。这些凭据仅在您首次启动 Elasticsearch 时显示。请自行记录。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/es4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;我们建议将elastic密码存储为 shell 中的环境变量。我的例子：
 &lt;img src=&#34;http://localhost:1313/images/es2.png&#34;
 	
@@ -103,7 +119,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ELASTIC_PASSWORD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;b5OyfgBHvYzaRX-ID+eK&amp;#34;&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ELASTIC_PASSWORD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Pjp6q62Tc1tTUdHmgEPO&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;将http_cacrt-ssl证书复制到您的计算机上&#34;&gt;将http_ca.crt SSL证书复制到您的计算机上&lt;/h3&gt;
@@ -126,6 +142,37 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/es3.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装运行-kibana&#34;&gt;安装运行 Kibana&lt;/h2&gt;
+&lt;p&gt;Kibana 是 Elastic 的用户界面。它非常适合初学者使用 Elasticsearch 并探索数据。我们将使用 Kibana 中的 Dev Tools 控制台向 Elasticsearch 发送 REST API 调用。&lt;/p&gt;
+&lt;p&gt;在一个新的终端会话中，启动 Kibana 并将其连接到您的 Elasticsearch 容器。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker pull docker.elastic.co/kibana/kibana:8.13.2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run --name kibana --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.13.2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装成功
+&lt;img src=&#34;http://localhost:1313/images/es5.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+在浏览器打开 http://localhost:5601/ 并输入上面的 Configure Kibana to use this cluster Enrollment Token，并输入账号密码。
+&lt;img src=&#34;http://localhost:1313/images/es6.png&#34;
 	
 	
 	

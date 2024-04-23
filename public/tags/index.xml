@@ -6,7 +6,15 @@
         <description>Recent content in Tags on 小谷时刻</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 17 Apr 2024 19:54:16 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 23 Apr 2024 08:56:31 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PostgreSQL</title>
+        <link>http://localhost:1313/tags/postgresql/</link>
+        <pubDate>Tue, 23 Apr 2024 08:56:31 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/postgresql/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Elasticsearch</title>
         <link>http://localhost:1313/tags/elasticsearch/</link>
         <pubDate>Wed, 17 Apr 2024 19:54:16 +0800</pubDate>
